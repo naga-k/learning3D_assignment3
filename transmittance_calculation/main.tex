@@ -1,7 +1,7 @@
 \documentclass[11pt,addpoints,answers]{exam}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
-\usepackage[svgname]{xcolor}
+\usepackage{xcolor}
 \usepackage{url}
 \usepackage{datetime}
 \usepackage{color}
@@ -27,7 +27,7 @@
 \title{\textsc{\hwName}} % Title
 
 
-\author{}
+\author{Naga Anjaneyulu Karumuri}
 
 \date{}
 
@@ -37,8 +37,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Don't display a date in the title and remove the white space
-\predate{}
-\postdate{}
+% \predate{}
+% \postdate{}
+\author{YOUR NAME HERE}
 \date{}
 
 %%%%%%%%%%%%%%%%%%
@@ -55,6 +56,7 @@
   \textsc{\large \courseNum{} \courseName{} (\courseSem)} \\
   \courseUrl\\
   \vspace{1em}
+Naga Anjaneyulu Karumuri - (Self Study Submission Feb. 2, 2025)\\
   OUT: \outDate \\
   DUE: \dueDate \\
   Instructor: \instructorName \\
@@ -94,9 +96,22 @@ Please compute the following transmittance:
 \begin{tcolorbox}[fit,height=20cm, width=\textwidth, blank, borderline={0.5pt}{-2pt},halign=left, valign=center, nobeforeafter]
 
 
-% \begin{studentsolution}
-% Write your solution here.
-% \end{studentsolution}
+
+\begin{studentsolution}
+\newcommand{\sigmaOne}{1}
+\newcommand{\sigmaTwo}{0.5}
+\newcommand{\sigmaThree}{10}
+\newcommand{\distOne}{2}
+\newcommand{\distTwo}{1}
+\newcommand{\distThree}{3}
+
+\begin{itemize}
+    \item $T(y1,y2) = e^{-\sigma_1 \cdot \distOne} = e^{-\sigmaOne \cdot \distOne} = e^{-2}$
+    \item $T(y2,y4) = e^ {-\sigma_2 \cdot \distTwo} \cdot e^ {-\sigma_3 \cdot \distThree} = e^{-\sigmaTwo \cdot \distTwo} \cdot e^{-\sigmaThree \cdot \distThree} = e ^ {-30.5}$
+    \item $T(x,y4) = e^{-\sigma_1 \cdot \distOne} \cdot e^ {-\sigma_2 \cdot \distTwo} \cdot e^ {-\sigma_3 \cdot \distThree} = e^{-\sigmaOne \cdot \distOne} \cdot e^{-\sigmaTwo \cdot \distTwo} \cdot e^{-\sigmaThree \cdot \distThree} = e ^ {-32.5}$
+    \item $T(x,y3) = e^{-\sigma_1 \cdot \distOne} \cdot e^ {-\sigma_2 \cdot \distTwo}  = e^{-\sigmaOne \cdot \distOne} \cdot e^{-\sigmaTwo \cdot \distTwo} = e ^ {-2.5}$
+\end{itemize}
+\end{studentsolution}
 
 \end{tcolorbox}
 \end{questions}
