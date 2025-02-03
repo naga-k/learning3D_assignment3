@@ -209,7 +209,7 @@ def train(
             out = model(ray_bundle)
 
             # TODO (Q2.2): Calculate loss
-            loss = None
+            loss = torch.mean((rgb_gt-out['feature']) ** 2)
 
             # Backprop
             optimizer.zero_grad()
@@ -329,7 +329,7 @@ def train_nerf(
             out = model(ray_bundle)
 
             # TODO (Q3.1): Calculate loss
-            loss = None
+            
 
             # Take the training step.
             optimizer.zero_grad()

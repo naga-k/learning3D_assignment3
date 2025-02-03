@@ -5,6 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "train_box config",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "./volume_rendering_main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config-name=train_box"
+            ]
+        },
+        {
             "name": "Box Config",
             "type": "debugpy",
             "request": "launch",
