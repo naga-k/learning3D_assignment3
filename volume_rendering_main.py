@@ -34,6 +34,7 @@ from dataset import (
     get_nerf_datasets,
     trivial_collate,
 )
+from render_functions import render_points
 
 
 # Model class containing:
@@ -98,18 +99,22 @@ def render_images(
 
         # TODO (Q1.3): Visualize xy grid using vis_grid
         if cam_idx == 0 and file_prefix == '':
-            pass
+            grid_vis_image = vis_grid(xy_grid, image_size)
+            plt.imsave(f'images/grid.png',grid_vis_image)
 
         # TODO (Q1.3): Visualize rays using vis_rays
         if cam_idx == 0 and file_prefix == '':
-            pass
+            ray_vis_image = vis_rays(ray_bundle, image_size)
+            plt.imsave(f'images/rays.png',ray_vis_image)
+            all_images.append(ray_vis_image)
         
         # TODO (Q1.4): Implement point sampling along rays in sampler.py
-        pass
+        ray_bundle = model.sampler(ray_bundle)
 
         # TODO (Q1.4): Visualize sample points as point cloud
+        print("num points in ray bundle,", ray_bundle.sample_points.shape)
         if cam_idx == 0 and file_prefix == '':
-            pass
+            render_points(f'images/points.png', ray_bundle.sample_points)
 
         # TODO (Q1.5): Implement rendering in renderer.py
         out = model(ray_bundle)
