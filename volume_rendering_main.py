@@ -112,9 +112,8 @@ def render_images(
         ray_bundle = model.sampler(ray_bundle)
 
         # TODO (Q1.4): Visualize sample points as point cloud
-        print("num points in ray bundle,", ray_bundle.sample_points.shape)
         if cam_idx == 0 and file_prefix == '':
-            render_points(f'images/points.png', ray_bundle.sample_points)
+            render_points(f'images/sample_points.png', ray_bundle.sample_points.view(1,-1,3))
 
         # TODO (Q1.5): Implement rendering in renderer.py
         out = model(ray_bundle)
