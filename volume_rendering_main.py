@@ -128,7 +128,12 @@ def render_images(
 
         # TODO (Q1.5): Visualize depth
         if cam_idx == 2 and file_prefix == '':
-            pass
+            plt.imsave(
+                'images/depth.png',
+                out['depth'].view(
+                    image_size[1], image_size[0]
+                ).detach().cpu()
+            )
 
         # Save
         if save:
